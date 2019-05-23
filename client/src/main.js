@@ -14,6 +14,8 @@ new Vue({
 
 axios.interceptors.request.use((config) => {
 
+  // if the user is corrently logged in, 
+  // then use the authtoken in the headers
   const authToken = store.getters['auth/authToken'];
   if (authToken) {
     config.headers.Authorization = `Bearer ${authToken}`;
