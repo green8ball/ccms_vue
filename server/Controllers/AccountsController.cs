@@ -9,7 +9,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AuthWebApi.Controllers
+namespace server.Controllers
 {
   [Route("api/[controller]")]
   public class AccountsController : Controller

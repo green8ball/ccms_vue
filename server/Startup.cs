@@ -7,6 +7,7 @@ using server.Extensions;
 using server.Helpers;
 using server.Models;
 using server.Models.Entities;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -113,7 +114,7 @@ namespace server
                 .AllowAnyMethod()
                 .AllowAnyHeader()));
 
-            //services.AddAutoMapper();
+            services.AddAutoMapper();
             services.AddMvc();
         }
 
