@@ -40,7 +40,7 @@ namespace server
                         // Add framework services.
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"),
-                    b => b.MigrationsAssembly("AuthWebApi")));
+                    b => b.MigrationsAssembly("server")));
 
             services.AddSingleton<IJwtFactory, JwtFactory>();
 
@@ -114,7 +114,7 @@ namespace server
                 .AllowAnyHeader()));
 
             //services.AddAutoMapper();
-            //services.AddMvc().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<Startup>());
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
