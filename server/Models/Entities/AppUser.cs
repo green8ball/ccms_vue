@@ -11,6 +11,5 @@ namespace server.Models.Entities
     public string LastName { get; set; }
     public string ezLMID { get; set; }
     public string ADID { get; set; }
-    public string Id { get; set; }
   }
 }
