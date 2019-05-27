@@ -43,7 +43,7 @@ namespace server.Controllers
 
         if (!result.Succeeded) return new BadRequestObjectResult(Errors.AddErrorsToModelState(result, ModelState));
 
-        await _appDbContext.Employees.AddAsync(new Employee { IdentityId = userIdentity.Id, Location = model.Location });
+        await _appDbContext.Employees.AddAsync(new Employee { IdentityId = userIdentity.Id});
         await _appDbContext.SaveChangesAsync();
 
         return new OkObjectResult("Account created");

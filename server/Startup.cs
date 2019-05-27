@@ -24,6 +24,8 @@ namespace server
 {
     public class Startup
     {
+        //For a new key, type the following in terminal
+        //node -e "console.log(require('crypto').randomBytes(32).toString('hex'));"
         private const string SecretKey = "8c2c85b5085a91419a8436ed2a46e9b3b9d60fa64a8a5f95e4099f7b77a62da1"; // todo: get this from somewhere secure
         private readonly SymmetricSecurityKey _signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SecretKey));
 

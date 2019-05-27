@@ -128,6 +128,8 @@ namespace server.Migrations
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("ADID");
+
                     b.Property<int>("AccessFailedCount");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -165,6 +167,8 @@ namespace server.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
 
+                    b.Property<string>("ezLMID");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -182,11 +186,7 @@ namespace server.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Gender");
-
                     b.Property<string>("IdentityId");
-
-                    b.Property<string>("Location");
 
                     b.HasKey("Id");
 

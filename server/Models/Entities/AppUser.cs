@@ -8,7 +8,9 @@ namespace server.Models.Entities
   {
     // Extended Properties
     public string FirstName { get; set; }
-
     public string LastName { get; set; }
+    public string ezLMID { get; set; }
+    public string ADID { get; set; }
+    public string Id { get; set; }
   }
 }

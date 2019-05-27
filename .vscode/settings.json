@@ -1,0 +1,9 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "/Users/joshuaortmann/Documents/projects/ccms/server/CCMS.db",
+            "dialect": "SQLite",
+            "name": "CCMS_Db"
+        }
+    ]
+}
