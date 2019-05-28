@@ -10,7 +10,7 @@
       <router-link to="/login"  class="navbar-item"  v-show="!isAuthenticated">Email login</router-link>
     </div>
     <div class="navbar-end">
-      <p>{{serverTime}}</p>
+      <p>{{sTime}}</p>
     </div>
   </div>
  </nav>
@@ -47,6 +47,10 @@ export default class Nav extends Vue {
       // this doesn't currently do anything in this demo but does get fired on successful login.
       // leaving it here to show how to allow communication between unrelated components - ie. Store -> Component
     });
+  }
+
+  get sTime() {
+    return this.serverTime;
   }
 
   private destroyed() {
