@@ -1,7 +1,6 @@
 <template>
 <body class="has-navbar-fixed-top">
 <div>
-<Nav /> 
 <router-view/> 
 </div>
 </body>
@@ -9,13 +8,6 @@
   
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import Nav from '@/components/Nav.vue'; // @ is an alias to /src
-
-@Component({
-  components: {
-    Nav,
-  },
-})
 export default class App extends Vue {}
 </script>
 

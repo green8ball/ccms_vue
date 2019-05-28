@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace server.Controllers
 {
@@ -39,7 +40,8 @@ namespace server.Controllers
                 customer.Identity.LastName,
                 customer.Identity.ADID,
                 customer.Identity.Email,
-                customer.Identity.ezLMID
+                customer.Identity.ezLMID,
+                serverTime = DateTime.Now
             });
         }
     }

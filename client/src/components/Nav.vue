@@ -1,16 +1,19 @@
 <template>
- <nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">    
-    <router-link to="/dashboard/home"  class="navbar-item"  v-show="isAuthenticated">Dashboard</router-link>   
-    <!-- <router-link to="/" class="navbar-item"></router-link> -->
-  </div>
+ <nav class="navbar is-white is-fixed-top" role="navigation" aria-label="main navigation" style="border-bottom: 2px solid #e5e5e5;border-right: 1px solid #e5e5e5;border-left: 1px solid #e5e5e5;">
+  <!-- <div class="navbar-brand">    
+    <router-link to="/" class="navbar-item"></router-link>
+  </div> -->
   <div class="navbar-menu">
     <div class="navbar-start">
-    <a class="navbar-item" href="javascript:void(0)" v-on:click="logoff" v-show="isAuthenticated">Logoff {{profile.firstName}}</a>
-    <router-link to="/login"  class="navbar-item"  v-show="!isAuthenticated">Email login</router-link>
+      <a class="navbar-item" href="javascript:void(0)" v-on:click="logoff" v-show="isAuthenticated">Logoff {{profile.firstName}}</a>
+      <router-link to="/dashboard/home"  class="navbar-item"  v-show="isAuthenticated">Dashboard</router-link>   
+      <router-link to="/login"  class="navbar-item"  v-show="!isAuthenticated">Email login</router-link>
+    </div>
+    <div class="navbar-end">
+      <p>{{profile.serverTime}}</p>
     </div>
   </div>
-</nav>
+ </nav>
 </template>
 
 <script lang="ts">
