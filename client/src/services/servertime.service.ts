@@ -1,11 +1,10 @@
 import axios from 'axios';
 import { BaseService } from './base.service';
-import { map, filter, catchError, mergeMap } from 'rxjs/operators';
 
 const auth = {headers: { Authorization: 'bearer ' + localStorage.getItem('auth-token')}};
-class DashboardService extends BaseService {
+class ServerTimeService extends BaseService {
 
-    private static instance: DashboardService;
+    private static instance: ServerTimeService;
 
     private constructor() {  super(); }
 
@@ -14,10 +13,10 @@ class DashboardService extends BaseService {
        return this.instance || (this.instance = new this());
     }
 
-    public getHomeDetails(): Promise<any> {
-        return axios.get(`${this.api}/dashboard/home`, auth);
+    public get(): Promise<any> {
+        return axios.get(`${this.api}/servertime/get`, auth);
     }
 }
 
 // export a singleton instance in the global namespace
-export const dashboardService = DashboardService.Instance;
+export const serverTimeService = ServerTimeService.Instance;

@@ -1,5 +1,3 @@
-
-
 using System.Threading.Tasks;
 using server.Data;
 using server.Helpers;
