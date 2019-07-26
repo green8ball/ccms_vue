@@ -39,8 +39,7 @@ namespace server.Controllers
                 customer.Identity.LastName,
                 customer.Identity.ADID,
                 customer.Identity.Email,
-                customer.Identity.ezLMID,
-                serverTime = DateTime.Now
+                customer.Identity.ezLMID
             });
         }
     }

@@ -1,18 +1,6 @@
 <template>
 <div> 
-<section class="hero is-info">
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <h1 class="title">
-        Hello, {{profile.firstName}}  {{profile.lastName}}
-      </h1>
-      <h2 class="subtitle">
-        Welcome back!
-      </h2>
-    </div>
-  </div>
-</section> 
- <section class="container">
+ <section class="container is-fluid">
     <div class="columns">
       <div class="column is-4 is-offset-4">
         <div class="card">          
