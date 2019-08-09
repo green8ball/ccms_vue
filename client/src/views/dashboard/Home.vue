@@ -6,7 +6,7 @@
         <div class="card">          
           <div class="card-content">
             <div class="content">
-              <h4>You've reached a protected area!</h4>
+              <!-- <h4>You've reached a protected area!</h4> -->
               <Spinner v-bind:show="isBusy" />            
               <p v-if="homeData.firstName"><strong>Name:</strong> {{name}}</p>
               <p v-if="homeData.ezLMID"><strong>ezLM ID:</strong> {{homeData.ezLMID}}</p>

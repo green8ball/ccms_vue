@@ -14,7 +14,7 @@ const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'loginForm',
+      name: 'root',
       component: LoginForm,
     },
     {
@@ -30,19 +30,14 @@ const router = new Router({
     {
       path: '/dashboard',
       component: DashboardRoot,
+      meta: { requiresAuth: true },
       children: [
         {
           path: 'home',
           component: DashboardHome,
           // a meta field
-          meta: { requiresAuth: true },
         },
       ],
-    },
-    {
-      path: '/about',
-      name: 'about',
-      component: About,
     },
   ],
 });
