@@ -16,16 +16,17 @@ const router = new Router({
       path: '/',
       name: 'root',
       component: LoginForm,
-    },
-    {
-      path: '/register',
-      name: 'registrationForm',
-      component: RegistrationForm,
+      meta: { requiresAuth: true},
     },
     {
       path: '/login',
       name: 'loginForm',
       component: LoginForm,
+    },
+    {
+      path: '/register',
+      name: 'registrationForm',
+      component: RegistrationForm,
     },
     {
       path: '/dashboard',

@@ -1,12 +1,13 @@
 <template>
 <div> 
- <section class="container is-fluid">
+ <Menu />
+ <!-- <section class="container is-fluid">
     <div class="columns">
       <div class="column is-4 is-offset-4">
         <div class="card">          
           <div class="card-content">
             <div class="content">
-              <!-- <h4>You've reached a protected area!</h4> -->
+              <h4>You've reached a protected area!</h4>
               <Spinner v-bind:show="isBusy" />            
               <p v-if="homeData.firstName"><strong>Name:</strong> {{name}}</p>
               <p v-if="homeData.ezLMID"><strong>ezLM ID:</strong> {{homeData.ezLMID}}</p>
@@ -17,7 +18,8 @@
         </div>
       </div>
     </div>
- </section>
+ </section> -->
+ 
  </div>
 </template>
 
@@ -26,6 +28,7 @@ import Spinner from '@/components/Spinner.vue'; // @ is an alias to /src
 import { Component, Vue } from 'vue-property-decorator';
 import { mapGetters } from 'vuex';
 import { dashboardService } from '../../services/dashboard.service';
+import Menu from '@/components/Menu.vue';
 
 @Component({
   computed: mapGetters({
@@ -33,6 +36,7 @@ import { dashboardService } from '../../services/dashboard.service';
   }),
   components: {
     Spinner,
+    Menu,
   },
 })
 export default class DashboardHome extends Vue {

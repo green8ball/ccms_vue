@@ -5,9 +5,9 @@
           <h3 class="title has-text-grey">Login</h3>
           <p class="subtitle has-text-grey">Please login to proceed</p>         
           <article class="message is-success" v-if="$route.query.new">
-          <div class="message-body">
-            <strong>You're all set {{$route.query.firstName}}!</strong> Login with your password to continue.
-          </div>
+            <div class="message-body">
+              <strong>You're all set {{$route.query.firstName}}!</strong> Login with your password to continue.
+            </div>
           </article>
           <div class="box">          
             <form @submit.prevent="handleSubmit">
@@ -47,7 +47,7 @@ import { Credentials } from '../../models/credentials.interface';
     Spinner,
   },
 })
-export default class RegistrationForm extends Vue {
+export default class LoginForm extends Vue {
 
 private isBusy: boolean = false;
 private errors: string = '';

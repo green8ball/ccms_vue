@@ -3,7 +3,7 @@
   <!-- <div class="navbar-brand">    
     <router-link to="/" class="navbar-item"></router-link>
   </div> -->
-  <div class="navbar-menu">
+  <div class="navbar-menu is-active">
     <div class="navbar-start">
       <router-link to="/dashboard/home"  class="navbar-item"  v-show="isAuthenticated">Dashboard</router-link>   
       <router-link to="/login"  class="navbar-item"  v-show="!isAuthenticated">Email login</router-link>
