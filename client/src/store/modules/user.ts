@@ -20,11 +20,14 @@ const actions = {
         dispatch('auth/authLogout', null, { root: true });
       });
     },
+    userLogout: ({commit, dispatch}: {commit: any, dispatch: any}) => {
+      commit('userLogout');
+    },
 };
 
 const mutations = {
     userRequest: (userState: any) => {
-        userState.status = 'attempting request for user profile data';
+      userState.status = 'attempting request for user profile data';
     },
     userSuccess: (userState: any, userResp: any) => {
       userState.status = 'success';
@@ -32,6 +35,10 @@ const mutations = {
     },
     userError: (userState: any) => {
       userState.status = 'error';
+    },
+    userLogout: (userState: any) => {
+      userState.status = null;
+      Vue.set(userState, 'profile', null);
     },
 };
 

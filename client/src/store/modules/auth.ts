@@ -34,7 +34,9 @@ const actions = {
     },
     authLogout: ({commit, dispatch}: {commit: any, dispatch: any}) => {
         return new Promise((resolve, reject) => {
+        //   commit('userLogout');
           commit('authLogout');
+          EventBus.$emit('logged-out', null);
           localStorage.removeItem('auth-token');
           resolve();
         });
@@ -53,7 +55,8 @@ const mutations = {
         authState.status = 'error';
     },
     authLogout: (authState: any) => {
-        authState.token = '';
+        authState.status = 'successfully logged out';
+        authState.token = null;
     },
 };
 
