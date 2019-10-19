@@ -4,8 +4,15 @@
             Admin
         </p>
         <ul class="menu-list">
-            <li><a>Agent Definition</a></li>
-            <li><a>Activity Codes</a></li>
+            <li><a href="">Employee Definition</a></li>
+            <li><a href="">Activity Codes</a></li>
+        </ul>
+        <p class="menu-label">
+          Scheduling
+        </p>
+        <ul class = "menu-list">
+          <li><a href="">Schedule Patterns</a></li>
+          <li><a href="">Schedule Management</a></li>
         </ul>
     </aside>
 </template>

@@ -333,3 +333,6 @@ ASALocalRun/
 # MSBuild Binary and Structured Log
 *.binlog
 server/CCMS.db
+server/CCMS.db-shm
+server/CCMS.db-wal
+server/obj/server.csproj.nuget.cache

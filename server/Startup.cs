@@ -50,14 +50,8 @@ namespace server
 
             services.AddSingleton<IJwtFactory, JwtFactory>();
 
-            // Register the ConfigurationBuilder instance of FacebookAuthSettings
-            //services.Configure<FacebookAuthSettings>(Configuration.GetSection(nameof(FacebookAuthSettings)));
-
-
             services.TryAddTransient<IHttpContextAccessor, HttpContextAccessor>();
 
-            // jwt wire up
-            // Get options from app settings
             var jwtAppSettingOptions = Configuration.GetSection(nameof(JwtIssuerOptions));
 
             // Configure JwtIssuerOptions
@@ -119,9 +113,9 @@ namespace server
                 .AllowAnyMethod()
                 .AllowAnyHeader()));
 
-            services.AddAutoMapper();
+            services.AddAutoMapper(typeof(Startup));
             services.AddControllers();
-            // services.AddMvc();
+            services.AddMvc();
             // services.MvcOptions.EnableEndpointRouting = false;
 
         }
