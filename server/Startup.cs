@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -45,6 +46,7 @@ namespace server
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlite(Configuration.GetConnectionString("DefaultConnection"),
                     b => b.MigrationsAssembly("server")));
+
 
             services.AddSingleton<IJwtFactory, JwtFactory>();
 
@@ -118,12 +120,14 @@ namespace server
                 .AllowAnyHeader()));
 
             services.AddAutoMapper();
-            services.AddMvc();
+            services.AddControllers();
+            // services.AddMvc();
+            // services.MvcOptions.EnableEndpointRouting = false;
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
@@ -149,11 +153,17 @@ namespace server
                 });
 
             app.UseCors("AllowAll");
-            // app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
             app.UseAuthentication();
+            app.UseAuthorization();
             app.UseDefaultFiles();
             app.UseStaticFiles();
-            app.UseMvc();
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
+            // app.UseMvc();
         }
     }
 }
